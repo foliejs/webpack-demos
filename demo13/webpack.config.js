@@ -1,4 +1,3 @@
-var webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -6,12 +5,12 @@ module.exports = {
     vendor: ['jquery'],
   },
   output: {
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.js'
-    })
-  ]
+  optimization: {
+    splitChunks: {
+      filename: 'vendor.js',
+      name: 'vendor'
+    }
+  }
 };

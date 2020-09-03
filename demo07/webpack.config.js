@@ -1,12 +1,18 @@
 var webpack = require('webpack');
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './main.js',
   output: {
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
+  cache: false,
+  // optimization: {
+  //   minimize: true,
+  //   minimizer: [new TerserPlugin()],
+  // }
   plugins: [
-    new UglifyJsPlugin()
+    new TerserPlugin({
+    })
   ]
 };

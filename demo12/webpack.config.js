@@ -22,13 +22,9 @@ module.exports = {
       },
     ]
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "commons",
-      // (the commons chunk name)
-
-      filename: "commons.js",
-      // (the filename of the commons chunk)
-    })
-  ]
+  optimization: {
+      splitChunks: {
+        chunks: "all",
+    }
+  }
 }

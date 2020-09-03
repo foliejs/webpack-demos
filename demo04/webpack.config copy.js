@@ -1,14 +1,14 @@
 module.exports = {
   entry: './main.js',
   output: {
-    filename: '[name].js'
+    filename: 'bundle.js'
   },
   module: {
-    rules: [
+    rules:[
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
+        use: [ 'style-loader', 'css-loader' ]
+      },
     ]
   }
 };

@@ -17,6 +17,7 @@ module.exports = {
       },
     ]
   },
+  // ignore webpack compliar
   externals: {
     // require('data') is external and available
     //  on the global var data

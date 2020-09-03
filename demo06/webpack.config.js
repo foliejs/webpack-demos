@@ -24,7 +24,10 @@ module.exports = {
           {
              loader: 'css-loader',
              options: {
-               modules: true
+               // 全局可以使用 :global 等参数，模块化
+               modules: true,
+               camelCase: true,
+               minimize: true
              }
           }
         ]

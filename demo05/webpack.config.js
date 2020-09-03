@@ -4,18 +4,22 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules:[
+    rules: [
       {
         test: /\.(png|jpg)$/,
         use: [
+          // use 里面存在多个 loader 的时候，里面是对象的形式
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 8192
+              limit: 8172,
+              outputPath: '/images'
+              // context: '',
+              // name: '[path][name].[ext]' // 输出图片不变
             }
           }
         ]
       }
     ]
   }
-};
+}
